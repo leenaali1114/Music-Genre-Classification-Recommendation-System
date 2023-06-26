@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/recommender_styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <title>Music Recommender</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="title">
+            <p align="center"><b>Music Recommender</b></p>
+        </div>
+        <div class="music">
+            <div class="names"><h3><b>{{song_names[0]}}</b></h3></div>
+            <div class="cossim"><p>Similarity Score: {{song_cosine_sim[0]}}</p></div>
+            <div class="track">
+                <img src="{{url_for('static', filename='images/play_button.jpg')}}" id="playBtn">
+                <div id="waveform"></div>
+            </div>
+        </div>
+        <br>
+        <div class="music">
+            <div class="names"><h3><b>{{song_names[1]}}</b></h3></div>
+            <div class="cossim"><p>Similarity Score: {{song_cosine_sim[1]}}</p></div>
+            <div class="track">
+                <img src="{{url_for('static', filename='images/play_button.jpg')}}" id="playBtnSong2">
+                <div id="waveform2"></div>
+            </div>
+        </div>
+        <br>
+        <div class="music">
+            <div class="names"><h3><b>{{song_names[2]}}</b></h3></div>
+            <div class="cossim"><p>Similarity Score: {{song_cosine_sim[2]}}</p></div>
+            <div class="track">
+                <img src="{{url_for('static', filename='images/play_button.jpg')}}" id="playBtnSong3">
+                <div id="waveform3"></div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <script type="text/javascript" src="../static/js/song.js"></script>
+</body>
+</html>

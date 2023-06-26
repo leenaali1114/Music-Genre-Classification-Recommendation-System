@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <script src="../static/js/recommendations.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Music Genre Recognizer</title>
+</head>
+<body>
+    <div class="title">
+        <p align="center"><b>Music Genre Recognizer</b></p>
+    </div>
+    <p align="center" class="display">Genre: {{final_class}}</p>
+    <p align="center" class="display">Confidence: {{probs}}{{percent}}</p>
+    <div class="form1">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <p>Drag your file here or click in this area</p>
+            <input type="submit" value="Upload">
+            <br>
+            <br>
+            {{message}}
+            <br>
+        </form>
+    </div>
+    <br>
+    <div class="form2">
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+    <br>
+    <div class="form3" action="../templates/recommendations.html">
+        <form action="/recommend" method="POST" enctype="multipart/form-data">
+            <a href="redirect"><input type="submit" value="Recommend"></a>
+        </form>
+    </div>
+    <div class="loader">
+        <img id="spinner" src="../static/gifs/spinner.gif">
+    </div>
+    <script type="text/javascript" src="../static/js/loader.js"></script>
+</body>
+</html>
